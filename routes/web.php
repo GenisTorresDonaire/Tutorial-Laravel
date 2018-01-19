@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('auth', function () {
-    return view('login');
+Route::get('login', function () {
+    return view('auth.login');
 });
 
-Route::get('auth', function () {
-    return view('logout');
+Route::get('logout', function () {
+    return view('auth.logout');
 });
 
 Route::get('catalog', function () {
@@ -39,3 +39,4 @@ Route::get('catalog/edit/{id}', function ($id) {
     return view('catalog.edit', array('id'=>$id));
 });
 
+?>
