@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('home');
 });
@@ -38,5 +38,24 @@ Route::get('catalog/create', function () {
 Route::get('catalog/edit/{id}', function ($id) {
     return view('catalog.edit', array('id'=>$id));
 });
+*/
+
+Route::get('/', 'HomeController@getHome');
+
+Route::get('login', function () {
+    return view('auth.login');
+});
+
+Route::get('logout', function () {
+    return view('auth.logout');
+});
+
+Route::get('catalog', 'CatalogController@getIndex');
+
+Route::get('catalog/show/{key}', 'CatalogController@getShow');
+
+Route::get('catalog/create', 'CatalogController@getCreate');
+
+Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
 
 ?>
